@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    html, body {
+        background: rgba(0,0,0,0.60);
+        font-family: Lucida Sans Unicode;
+    }
+
+    #ipAddress {
+        color: lightgray;
+    }
+
+    div {
+        opacity: 0.50;
+    }
+
+</style>
+
+<div id="ipAddress">
+    IP: No IP Yet
+</div>
+
+<script src="../dist/bundle.js"></script>
+
+<script>
+    let {ipcRenderer} = require('electron');
+    let ipAddressDiv = document.getElementById('ipAddress');
+
+    ipcRenderer.on('publicIPSent', (event, arg) => {
+        console.log(arg);
+        ipAddressDiv.innerText = arg;
+    });
+</script>
+</body>
+</html>

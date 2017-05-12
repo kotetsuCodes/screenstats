@@ -1,0 +1,23 @@
+{
+  "name": "screenstats",
+  "version": "1.0.0",
+  "description": "Tool for showing PC details on the screen",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack && electron ./app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "regis trinstar",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "css-loader": "^0.28.1",
+    "electron": "^1.6.7",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "external-ip": "^0.2.4"
+  }
+}
